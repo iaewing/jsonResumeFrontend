@@ -1,9 +1,8 @@
 <script setup lang="ts">
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-const props = defineProps({
-  company: String,
-});
+import { defineProps } from "vue";
+const props = defineProps<{
+  company: string;
+}>();
 </script>
 
 <template>
