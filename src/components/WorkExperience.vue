@@ -1,11 +1,9 @@
+<script setup lang="ts">
+const props = defineProps({
+  company: String,
+});
+</script>
+
 <template>
   <div>{{ company }}</div>
 </template>
-
-<script lang="ts">
-export default {
-  props: {
-    company: String,
-  },
-};
-</script>
