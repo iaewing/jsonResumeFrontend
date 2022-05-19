@@ -12,7 +12,7 @@ const toggleDisplay = () => {
 </script>
 
 <template>
-  <div>
+  <div class="bg-red-200">
     <button @click="toggleDisplay">Toggle</button>
     <div v-if="shouldDisplay">{{ company }}</div>
   </div>
