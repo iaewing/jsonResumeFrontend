@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { WorkInterface } from "@/types";
 import { defineProps, ref } from "vue";
+
 const props = defineProps<{
-  company: string;
+  company: WorkInterface;
 }>();
 
 const shouldDisplay = ref<boolean>(false);
@@ -13,7 +15,7 @@ const toggleDisplay = () => {
 
 <template>
   <div class="bg-red-200">
-    <button @click="toggleDisplay">Toggle</button>
+    <button @click="toggleDisplay">Toggle {{ company.name }}</button>
     <div v-if="shouldDisplay">{{ company }}</div>
   </div>
 </template>
