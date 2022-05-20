@@ -1,33 +1,14 @@
-<template>
-  <WorkExperience company="Vehikl" />
-</template>
-
-<script lang="ts">
+<script setup lang="ts">
 import WorkExperience from "./components/WorkExperience.vue";
-
-export default {
-  setup() {
-    {
-      String;
-    }
-  },
-  components: {
-    WorkExperience,
-  },
-};
+import resume from "./assets/resume.json";
 </script>
 
-<style>
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<template>
+  <div
+    v-for="workExperience in resume.work"
+    :key="workExperience.name"
+    class="w-1/2"
+  >
+    <WorkExperience :company="workExperience" />
+  </div>
+</template>
