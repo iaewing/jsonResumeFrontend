@@ -1,8 +1,9 @@
 import { shallowMount } from "@vue/test-utils";
 import WorkExperience from "@/components/WorkExperience.vue";
+import mockResume from "../mockResume.json";
 
 describe("WorkExperience.vue", () => {
-  const company = "Vehikl";
+  const company = mockResume.work[0];
   it("does not display the company prop by default", () => {
     const wrapper = shallowMount(WorkExperience, {
       props: { company },
@@ -11,15 +12,15 @@ describe("WorkExperience.vue", () => {
     expect(companyTest.exists()).toBe(false);
   });
 
-  it("can toggle whether the company is displayed", async () => {
+  it("can toggle whether the company details are displayed", async () => {
     const wrapper = shallowMount(WorkExperience, {
       props: { company },
     });
     expect(wrapper.find('[aria-label="Company Name"]').exists()).toBe(false);
     const toggle = wrapper.find("button");
     await toggle.trigger("click");
-    expect(wrapper.text()).not.toContain(company);
+    expect(wrapper.text()).toContain(company.position);
     await toggle.trigger("click");
-    expect(wrapper.text()).toContain(company);
+    expect(wrapper.text()).not.toContain(company.position);
   });
 });
