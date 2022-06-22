@@ -4,6 +4,7 @@ import resume from "./assets/resume.json";
 </script>
 
 <template>
+  <div aria-label="Application Title">Application Title</div>
   <div
     v-for="workExperience in resume.work"
     :key="workExperience.name"

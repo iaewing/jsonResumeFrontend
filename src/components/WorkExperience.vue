@@ -16,6 +16,6 @@ const toggleDisplay = () => {
 <template>
   <div class="bg-red-200">
     <button @click="toggleDisplay">Toggle {{ company.name }}</button>
-    <div v-if="shouldDisplay">{{ company }}</div>
+    <div v-if="shouldDisplay" aria-label="Company Name">{{ company }}</div>
   </div>
 </template>
