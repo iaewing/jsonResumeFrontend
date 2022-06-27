@@ -1,3 +1,17 @@
+type Address = {
+  address: string;
+  postalCode: string;
+  city: string;
+  countryCode: string;
+  region: string;
+};
+
+type Profile = {
+  network: string;
+  username: string;
+  url: string;
+};
+
 interface WorkInterface {
   name: string;
   position: string;
@@ -8,4 +22,16 @@ interface WorkInterface {
   highlights: string[];
 }
 
-export { WorkInterface };
+interface UserInterface {
+  name: string;
+  label: string;
+  image: string;
+  email: string;
+  phone: string;
+  url: string;
+  summary: string;
+  location: Address;
+  profiles: Profile[];
+}
+
+export { UserInterface, WorkInterface };
