@@ -6,7 +6,7 @@ type Address = {
   region: string;
 };
 
-type Profile = {
+export type Profile = {
   network: string;
   username: string;
   url: string;
