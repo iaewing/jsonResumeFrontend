@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { UserInterface } from "@/types";
 import { defineProps } from "vue";
-import UserProfiles from "./UserProfiles.vue";
-import UserLocation from "./UserLocation.vue";
 
 const props = defineProps<{
   user: UserInterface;
@@ -17,6 +15,4 @@ const props = defineProps<{
   <div>{{ user.phone }}</div>
   <div>{{ user.url }}</div>
   <div>{{ user.summary }}</div>
-  <UserLocation :location="user.location" />
-  <UserProfiles :profiles="user.profiles" />
 </template>

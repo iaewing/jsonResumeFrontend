@@ -1,4 +1,4 @@
-type Address = {
+export type Address = {
   address: string;
   postalCode: string;
   city: string;
